@@ -16,12 +16,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%&w%cj22*z0ozg@k0%7_l@2ou5nytt+lpa^2^8wz+3q9bxfmx1'
+SECRET_KEY = os.environ['SECRET_KEY']
+#'django-insecure-%&w%cj22*z0ozg@k0%7_l@2ou5nytt+lpa^2^8wz+3q9bxfmx1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["kamrano-19.herokuapp.com","localhost"]
 
 
 # Application definition
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -113,6 +115,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 #LOGIN_REDIRECT_URL = 'welcome'
 #LOGIN_URL = 'login'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
