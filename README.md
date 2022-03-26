@@ -2,7 +2,7 @@
 Django 3 Social Network | Social media
 
 1. Create project motechapp - django-admin startproject motechapp
-2. Change directory (cd motechapp)and create app core - django-admin startapp core
+2.  create app core - django-admin startapp core
 3. Add core in installed app section of settings.py
 4. Install crispy form and add in installed app of settings.py
 5. Set path of static files
